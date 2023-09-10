@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card" style="background-color:aliceblue;">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1"><img src="{{selectedproduct.thumbnail}}" /></div>
+            <div class="tab-pane" id="pic-2"><img src="assets\banners.jpg" /></div>
+            <div class="tab-pane" id="pic-3"><img src="assets\banners.jpg" /></div>
+            <div class="tab-pane" id="pic-4"><img src="assets\banners.jpg" /></div>
+            <div class="tab-pane" id="pic-5"><img src="assets\banners.jpg" /></div>
+          </div>
+        </div>
+        <div class="details col-md-6">
+          <h3 class="product-title">{{selectedproduct.title}}</h3>
+          <div class="rating">
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <span class="review-no">{{selectedproduct.rating}}</span>
+          </div>
+          <p class="product-description">{{selectedproduct.description}}</p>
+          <h4 class="price">current price: <span>{{selectedproduct.price}}$</span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

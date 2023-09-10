@@ -1,0 +1,19 @@
+<div class="row mt-4">
+
+  <div class="card col-lg-3 mx-5 my-4" *ngFor="let product of Allproducts"
+    style="width:250px ; height:max-content; background-color:aliceblue;">
+    <a [routerLink]="['/productdetails',product.id]">
+      <img src={{product.thumbnail}} class="card-img-top" alt="..." />
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <h5 class="card-title">Product Descriotion</h5>
+      <p class="card-text " *ngIf="product.showDetails"
+        style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+        {{product.description}}</p>
+      <button class="btn btn-primary"
+        (click)="toggleDescripion(product.id)">{{product.showDetails?'Hide':'Show'}}Details</button>
+    </div>
+  </div>
+
+</div>
