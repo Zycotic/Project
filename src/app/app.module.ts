@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductcardComponent } from './productcard/productcard.component';
 import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,15 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     FooterComponent,
     ProductcardComponent,
-    ProductsComponent,
-    
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

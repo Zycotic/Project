@@ -1,18 +1,24 @@
-<div class="row mt-4">
+<mat-paginator [length]=100 [pageSize]="10" aria-label="Select page" (page)="changePage()"></mat-paginator>
+<div class="row ml-4 w-50">
+  <input type="text" class="form-control" [(ngModel)]="setSearchValue">
+</div>
+<div class="row mt-4 card-container">
 
   <div class="card col-lg-3 mx-5 my-4" *ngFor="let product of Allproducts"
-    style="width:250px ; height:max-content; background-color:aliceblue;">
+    style="width: 250px; background-color: aliceblue; display: flex; flex-direction: column;">
     <a [routerLink]="['/productdetails',product.id]">
-      <img src={{product.thumbnail}} class="card-img-top" alt="..." />
+      <img src={{product.thumbnail}} class="card-img-top" alt="..." style="max-width: 500px; max-height: 500px;" />
     </a>
-    <div class="card-body">
+    <div class="card-body flex-grow-1">
       <h5 class="card-title">{{product.title}}</h5>
-      <h5 class="card-title">Product Descriotion</h5>
-      <p class="card-text " *ngIf="product.showDetails"
+      <h5 class="card-title">Product Description</h5>
+      <p class="card-text" *ngIf="product.showDetails"
         style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
         {{product.description}}</p>
-      <button class="btn btn-primary"
-        (click)="toggleDescripion(product.id)">{{product.showDetails?'Hide':'Show'}}Details</button>
+      <div class="mt-auto">
+        <button class="btn btn-primary"
+          (click)="toggleDescripion(product.id)">{{product.showDetails ? 'Hide' : 'Show'}} Details</button>
+      </div>
     </div>
   </div>
 
